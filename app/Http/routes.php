@@ -29,6 +29,8 @@ get('/users/{id}/edit','UsersController@edit')->name('users.edit');
 patch('/users/{id}','UsersController@update')->name('users.update');
 delete('/users/{id}','UsersController@destroy')->name('users.destroy');
 
+get('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
+
 
 
 get('login','SessionsController@create')->name('login');

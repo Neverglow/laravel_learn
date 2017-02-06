@@ -21,5 +21,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'created_at' => $date_time,
         'updated_at' => $date_time,
         'is_admin' => false,
+        'activated' => true,
     ];
 });

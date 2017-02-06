@@ -20,6 +20,7 @@ class UserTableSeeder extends Seeder
         $user->email = '183610562@qq.com';
         $user->password = 'password';
         $user->is_admin = true;
+        $user->activated = true;
         $user->save();
     }
 }
