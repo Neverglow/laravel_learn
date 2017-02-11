@@ -14,9 +14,6 @@ class FollowersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', [
-            'store', 'destroy'
-        ]);
     }
 
     public function store($id)

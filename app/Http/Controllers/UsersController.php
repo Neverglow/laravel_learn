@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use App\User;
-
 use Auth;
 use Mail;
 
@@ -43,7 +40,7 @@ class UsersController extends Controller
     {
         // $users = User::all();
         $users = User::paginate(30);
-        return view('users.index',compact('users'));
+        return view('users.index', compact('users'));
     }
 
     public function store(Request $request)
@@ -68,10 +65,9 @@ class UsersController extends Controller
 
     public function edit($id)
     {
-
         $user = User::FindOrFail($id);
         $this->authorize('update', $user);
-        return view('users.edit',compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     public function update($id, Request $request)
@@ -90,15 +86,15 @@ class UsersController extends Controller
         ]);
         $user->update($data);
 
-        session()->flash('success','个人资料更新成功');
+        session()->flash('success', '个人资料更新成功');
 
-        return redirect()->route('users.show',$id);
+        return redirect()->route('users.show', $id);
     }
 
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        $this->authorize('destroy',$user);
+        $this->authorize('destroy', $user);
         $user->delete();
         session()->flash('success', '成功删除用户！');
         return back();
