@@ -2,7 +2,9 @@
 @section('title','关于')
 @section('content')
   <h1>学习一个</h1>
-  <table class="wikitable">
+<div class="container">
+<div class="col-md-offset-2 col-md-8">
+<table class="table table-bordered table-hover">
 <tr>
 <th>出处</th>
 <th>原始素材</th>
@@ -255,4 +257,6 @@
 <td>exciting 为讹传</td>
 </tr>
 </table>
+</div>
+</div>
 @stop
